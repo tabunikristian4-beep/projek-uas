@@ -1,0 +1,54 @@
+stack_menu.py
+from collections import deque
+
+def main():
+    stack = deque()
+
+    while True:
+        print("\n=== PROGRAM STACK ===")
+        print("1. Append (Tambah di kanan)")
+        print("2. AppendLeft (Tambah di kiri)")
+        print("3. Pop (Hapus dari kanan)")
+        print("4. PopLeft (Hapus dari kiri)")
+        print("5. Clear (Kosongkan stack)")
+        print("6. Keluar")
+
+        pilihan = input("Pilih menu: ")
+
+        if pilihan == "1":
+            data = input("Masukkan data: ")
+            stack.append(data)
+            print("-> Data ditambah")
+
+        elif pilihan == "2":
+            data = input("Masukkan data: ")
+            stack.appendleft(data)
+            print("-> Data ditambah di kiri")
+
+        elif pilihan == "3":
+            if stack:
+                print("-> Data dihapus:", stack.pop())
+            else:
+                print("-> Stack kosong")
+
+        elif pilihan == "4":
+            if stack:
+                print("-> Data dihapus:", stack.popleft())
+            else:
+                print("-> Stack kosong")
+
+        elif pilihan == "5":
+            stack.clear()
+            print("-> Stack dikosongkan")
+
+        elif pilihan == "6":
+            print("Keluar dari program...")
+            break
+
+        else:
+            print("Pilihan tidak valid")
+
+        print("Isi stack sekarang:", list(stack))
+
+if __name__ == "__main__":
+    main()
