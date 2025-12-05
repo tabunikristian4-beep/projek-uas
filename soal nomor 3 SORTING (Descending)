@@ -1,0 +1,21 @@
+quicksort_desc.py
+def quicksort_desc(arr):
+    if len(arr) <= 1:
+        return arr
+    pivot = arr[len(arr) // 2]
+
+    left = [x for x in arr if x > pivot]   # lebih besar dulu
+    middle = [x for x in arr if x == pivot]
+    right = [x for x in arr if x < pivot]
+
+    return quicksort_desc(left) + middle + quicksort_desc(right)
+
+def main():
+    data = [12, 45, 5, 67, 32, 66, 78, 10, 17, 9]
+    
+    print("Data asli:", data)
+    hasil = quicksort_desc(data)
+    print("Hasil sorting (besar ke kecil):", hasil)
+
+if __name__ == "__main__":
+    main()
